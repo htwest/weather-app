@@ -6,7 +6,10 @@ export default function Home() {
         <p>Icon</p>
       </div>
       <div className="temperature">
-        <h2 className="temperature-degree">34</h2>
+        <div className="degree-section">
+          <h2 className="temperature-degree">34</h2>
+          <span>F</span>
+        </div>
         <div className="temperature-description">It's cold</div>
       </div>
     </div>
