@@ -23,10 +23,9 @@ export const getStaticProps = async () => {
   // return {
   //   props: { users: data },
   // };
+  const API = process.env.IP_DATA_API;
 
-  const res = await fetch(
-    "https://api.ipdata.co?api-key=e9cd3843d383b6b62076b7b7fa9c8c83d210725ad5332d8db4ef3e0a"
-  );
+  const res = await fetch(`https://api.ipdata.co?api-key=${API}`);
   const data = await res.json();
   let lat = await data.latitude;
   let long = await data.longitude;
