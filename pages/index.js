@@ -1,4 +1,6 @@
-export default function Home() {
+export default function Home({ users }) {
+  console.log(users);
+
   return (
     <div className="container">
       <div className="location">
@@ -15,3 +17,12 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await res.json();
+
+  return {
+    props: { users: data },
+  };
+};
