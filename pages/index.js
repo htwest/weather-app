@@ -1,5 +1,5 @@
-export default function Home({ geo }) {
-  console.log(geo);
+export default function Home({ data }) {
+  console.log(data);
   return (
     <div className="container">
       <div className="location">
@@ -18,19 +18,21 @@ export default function Home({ geo }) {
 }
 
 export const getStaticProps = async () => {
-  // const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  // const data = await res.json();
-  // return {
-  //   props: { users: data },
-  // };
-  const API = process.env.IP_DATA_API;
+  const geoAPI = process.env.IP_DATA_API;
+  const weatherAPI = process.env.WEATHER_API;
 
-  const res = await fetch(`https://api.ipdata.co?api-key=${API}`);
-  const data = await res.json();
-  let lat = await data.latitude;
-  let long = await data.longitude;
+  // Obtain Geo Data
+  const geoRes = await fetch(`https://api.ipdata.co?api-key=${geoAPI}`);
+  const geoData = await geoRes.json();
+  const city = await geoData.city;
+
+  // Obtain Weather Data
+  const weatherRes = await fetch(
+    `http://api.weatherapi.com/v1/current.json?key=${weatherAPI}&q=${city}&aqi=no`
+  );
+  const weatherData = await weatherRes.json();
 
   return {
-    props: { geo: { latitude: lat, longitude: long } },
+    props: { data: weatherData },
   };
 };
