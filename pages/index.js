@@ -1,17 +1,27 @@
+import { useState } from "react";
+
 export default function Home({ data }) {
-  console.log(data);
+  // console.log(data);
+
+  const [city, setCity] = useState(data.location.name);
+  const [region, setRegion] = useState(data.location.region);
+  const [timeZone, setTimeZone] = useState(data.location.tz_id);
+  const [temp, setTemp] = useState(data.current.temp_f);
+  const [condition, setCondition] = useState(data.current.condition.text);
+  const [icon, setIcon] = useState(data.current.condition.icon);
+
   return (
     <div className="container">
       <div className="location">
-        <h1 className="location-timezone">Timezone</h1>
-        <p>Icon</p>
+        <h1 className="location-timezone">{timeZone}</h1>
+        <img src={icon} alt="icon" />
       </div>
       <div className="temperature">
         <div className="degree-section">
-          <h2 className="temperature-degree">34</h2>
+          <h2 className="temperature-degree">{temp}</h2>
           <span>F</span>
         </div>
-        <div className="temperature-description">It's cold</div>
+        <div className="temperature-description">{condition}</div>
       </div>
     </div>
   );
