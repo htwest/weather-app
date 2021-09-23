@@ -1,8 +1,6 @@
 import { useState } from "react";
 
 export default function Home({ data }) {
-  // console.log(data);
-
   const [city, setCity] = useState(data.location.name);
   const [region, setRegion] = useState(data.location.region);
   const [timeZone, setTimeZone] = useState(data.location.tz_id);
@@ -13,8 +11,8 @@ export default function Home({ data }) {
   return (
     <div className="container">
       <div className="location">
+        <img src={icon} alt="icon" className="weather-icon" />
         <h1 className="location-timezone">{timeZone}</h1>
-        <img src={icon} alt="icon" />
       </div>
       <div className="temperature">
         <div className="degree-section">
