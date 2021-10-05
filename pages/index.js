@@ -7,6 +7,7 @@ export default function Home({ data }) {
   const [temp, setTemp] = useState(data.current.temp_f);
   const [condition, setCondition] = useState(data.current.condition.text);
   const [icon, setIcon] = useState(data.current.condition.icon);
+  const [test, setTest] = useState(null);
 
   return (
     <div className="container">
