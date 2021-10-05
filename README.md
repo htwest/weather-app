@@ -5,8 +5,8 @@
 
 A Basic Weather App that uses your IP address to lookup the weather for the user's current location.
 
-Uses IPData to obtain IP address and GeoLocation from https://ipdata.co/
-Uses WeatherAPI to obtain current weather data from https://www.weatherapi.com/
+- Uses IPData to obtain IP address and GeoLocation from https://ipdata.co/
+- Uses WeatherAPI to obtain current weather data from https://www.weatherapi.com/
 
 
 ## How to Install:
