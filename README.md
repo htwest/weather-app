@@ -15,7 +15,7 @@ A Basic Weather App that uses your IP address to lookup the weather for the user
 - Install all required dependencies
 - Sign up and aquire API token from https://ipdata.co/
 - Sign up and aquire API token from https://www.weatherapi.com/
-- Create and ENV file and set 'WEATHER_API' equal to your generated API token
+- Create and ENV file and set 'WEATHER_API' and 'IP_DATA_API' equal to your generated API tokens
 
 
 ## How to Use:
